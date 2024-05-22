@@ -37,7 +37,7 @@ export default function EventForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-8">
       <input
         type="text"
         name="name"
@@ -45,6 +45,7 @@ export default function EventForm() {
         value={eventData.name}
         onChange={handleChange}
         required
+        className="block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
@@ -53,6 +54,7 @@ export default function EventForm() {
         value={eventData.location}
         onChange={handleChange}
         required
+        className="block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="date"
@@ -60,6 +62,7 @@ export default function EventForm() {
         value={eventData.date}
         onChange={handleChange}
         required
+        className="block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <textarea
         name="description"
@@ -67,6 +70,7 @@ export default function EventForm() {
         value={eventData.description}
         onChange={handleChange}
         required
+        className="block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
@@ -74,8 +78,9 @@ export default function EventForm() {
         placeholder="Photo URL"
         value={eventData.photo}
         onChange={handleChange}
+        className="block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
       />
-      <button type="submit">Submit Event</button>
+      <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit Event</button>
     </form>
   );
 }
