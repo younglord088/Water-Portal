@@ -73,7 +73,6 @@ export async function POST(request) {
     return NextResponse.json({ error: `Method ${request.method} Not Allowed` });
   }
 }
-// GET function
 // export async function GET(request) {
 //   if (request.method === 'GET') {
 //     let connection;
@@ -102,6 +101,7 @@ export async function POST(request) {
 //   }
 // }
 
+// GET function
 
 export async function GET(request) {
   if (request.method === 'GET') {
