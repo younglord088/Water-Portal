@@ -10,7 +10,7 @@ export const config = {
   },
 };
 
-// Define the POST function
+// POST function
 export async function POST(request) {
   if (request.method === 'POST') {
     try {
@@ -70,6 +70,69 @@ export async function POST(request) {
     }
   } else {
     // Handle non-POST requests
+    return NextResponse.json({ error: `Method ${request.method} Not Allowed` });
+  }
+}
+// GET function
+// export async function GET(request) {
+//   if (request.method === 'GET') {
+//     let connection;
+//     try {
+//       const connectionConfig = {
+//         host: 'localhost',
+//         user: 'root',    
+//         password: 'yash@123', 
+//         database: 'power_portal'    
+//       };
+//       connection = await mysql.createConnection(connectionConfig);
+
+//       const [rows] = await connection.execute('SELECT * FROM events');
+
+//       return NextResponse.json(rows);
+//     } catch (error) {
+//       console.error('Failed to retrieve events:', error);
+//       return NextResponse.json({ error: 'Failed to retrieve events' });
+//     } finally {
+//       if (connection) {
+//         await connection.end();
+//       }
+//     }
+//   } else {
+//     return NextResponse.json({ error: `Method ${request.method} Not Allowed` });
+//   }
+// }
+
+
+export async function GET(request) {
+  if (request.method === 'GET') {
+    const url = new URL(request.url);
+    const page = parseInt(url.searchParams.get('page')) || 1;
+    const limit = parseInt(url.searchParams.get('limit')) || 10;
+    const offset = (page - 1) * limit;
+
+    let connection;
+    try {
+      const connectionConfig = {
+        host: 'localhost',
+        user: 'root',
+        password: 'yash@123',
+        database: 'power_portal'
+      };
+      connection = await mysql.createConnection(connectionConfig);
+
+      // Corrected SQL query with placeholders in the right order
+      const [rows] = await connection.execute('SELECT * FROM events LIMIT ?, ?', [String(offset), String(limit)]);
+
+      return NextResponse.json(rows);
+    } catch (error) {
+      console.error('Failed to retrieve events:', error);
+      return NextResponse.json({ error: 'Failed to retrieve events' });
+    } finally {
+      if (connection) {
+        await connection.end();
+      }
+    }
+  } else {
     return NextResponse.json({ error: `Method ${request.method} Not Allowed` });
   }
 }
