@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AquaLink: Connecting Water Enthusiasts through Collaborative Content
 
-## Getting Started
+Welcome to AquaLink, a project aimed at enhancing the India Water Portal by enabling user-generated content through event posting, server-side rendering, and lazy loading techniques. This project is part of my application for the **Code for GovTech (C4GT) 2024** initiative.
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+AquaLink is a Next.js application designed to connect water enthusiasts and foster collaboration on water conservation efforts. By providing a platform for sharing articles, events, opportunities, and translations, AquaLink aims to enrich the community's knowledge base and engage users in meaningful ways.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Event Posting**: Users can create and share events related to water conservation and management.
+2. **Server-Side Rendering (SSR)**: Efficiently render pages on the server to improve performance and SEO.
+3. **Lazy Loading**: Load components as they are needed to enhance the application's performance and user experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies Used
 
-## Learn More
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **Tailwind CSS**: A utility-first CSS framework for designing responsive and modern interfaces.
+- **TypeScript**: A statically typed superset of JavaScript that enhances code quality and maintainability.
 
-To learn more about Next.js, take a look at the following resources:
+## Project Objectives
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **User Contributions**: Allow users to post articles, events, and opportunities, and to translate content.
+- **OAuth Authentication**: Enable users to log in using platforms like Drupal and Disqus.
+- **Role-Based Access Control**: Implement a system to manage user roles and permissions.
+- **Enhanced UI/UX**: Create a user-friendly and intuitive interface for submitting and managing content.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Implementation Details
 
-## Deploy on Vercel
+### Event Posting
+Users can post events through a dedicated form. This feature is designed using Next.js dynamic routes and Tailwind CSS for a seamless user experience.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Server-Side Rendering (SSR)
+To improve performance and SEO, key pages are rendered on the server. This is achieved by utilizing Next.js’s `getServerSideProps` and `getStaticProps` functions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Lazy Loading
+Components and images are lazily loaded to reduce initial load times and improve overall application performance. This is implemented using React's `React.lazy` and Next.js's native image optimization capabilities.
+
+## How to Contribute
+We welcome contributions from the community. To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m 'Add some feature'
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+5. Open a pull request.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+For any questions or suggestions, feel free to contact me:
+
+- **Name**: Yash Panjwani
+- **Email**: [yashmpanjwani@gmail.com](mailto:yashmpanjwani@gmail.com)
+- **GitHub**: [younglord088](https://github.com/younglord088)
+
+## Acknowledgements
+Special thanks to the Code for GovTech community for their support and guidance throughout this project.
